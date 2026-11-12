@@ -1,5 +1,0 @@
-﻿namespace Modsen.Portal.TimeTrack.UseCases.Dashboard.Core.CoreDto;
-
-public record DashboardCurrentUserAllTrackedHoursCoreDto(IReadOnlyCollection<DateAndTotalTrackedTimeInMinutesCoreDto> TrackedTime);
-
-public record DateAndTotalTrackedTimeInMinutesCoreDto(DateOnly Date, int TotalTrackedTimeInMinutes);

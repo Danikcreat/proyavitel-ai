@@ -1,1 +1,0 @@
-export declare const VERTICAL_DIRECTION_BREAKPOINT = 643;

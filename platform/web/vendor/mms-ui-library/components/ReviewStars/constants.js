@@ -1,1 +1,0 @@
-var r=5,B="#F0B501",F="#F0B501";export{r as STARS_COUNT,B as STAR_COLOR,F as STAR_EMPTY_COLOR};

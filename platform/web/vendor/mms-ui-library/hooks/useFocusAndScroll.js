@@ -1,1 +1,0 @@
-import{useRef as r}from"react";var o=function(){var o=r(null);return[o,function(){o.current&&(o.current.focus(),o.current.scrollIntoView({behavior:"smooth",block:"nearest"}))}]};export{o as useFocusAndScroll};

@@ -1,1 +1,0 @@
-var r=20,a=10;export{a as CHECKED_CIRCLE_SIZE,r as RADIO_BUTTON_SIZE};

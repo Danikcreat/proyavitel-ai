@@ -1,1 +1,0 @@
-export const MOBILE_DISCOUNT_BREAKPOINT = 574;

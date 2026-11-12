@@ -1,1 +1,0 @@
-var e=function(e,o,t){return"string"==typeof o?o.toLowerCase().includes(e.toLowerCase()):!("object"!=typeof o||null===o||!t)&&o[t].toLowerCase().includes(e.toLowerCase())};export{e as isOptionIncludeSearchValue};

@@ -1,1 +1,0 @@
-import{useEffect as e}from"react";var n=function(n,t){e((function(){return n&&t&&document.addEventListener("wheel",t),function(){t&&document.removeEventListener("wheel",t)}}),[n])};export{n as useIsWheeling};

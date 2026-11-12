@@ -1,2 +1,0 @@
-import { DropDownCoreProps } from '@/components/Dropdown/components/DropDownCore/types';
-export declare function DropDownCore({ options, value, nameField, valueField, dataTestId, width, outlined, disabled, typography, mainTextColor, showToolTipIfCut, isArrowButtonEnabled, verticalPaddings, arrowAndTextAlign, valueLabelOverride, error, errorText, isActive, }: DropDownCoreProps): import("react/jsx-runtime").JSX.Element;

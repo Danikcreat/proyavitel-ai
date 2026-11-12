@@ -1,3 +1,0 @@
-export const NOTIFICATION_BADGE_SIZE = 6;
-export const NOTIFICATION_BADGE_TOP = 2;
-export const NOTIFICATION_BADGE_RIGHT = 2;

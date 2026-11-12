@@ -1,1 +1,0 @@
-var i;!function(i){i.InvalidFormat="invalid-format",i.ExceedsSizeLimit="exceeds-size-limit",i.TooManyFiles="too-many-files",i.InvalidFileName="invalid-file-name"}(i||(i={}));export{i as FileRejectionReason};

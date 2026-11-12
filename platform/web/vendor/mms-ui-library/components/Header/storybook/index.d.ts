@@ -1,1 +1,0 @@
-export { ModsenLogo } from './Logo';

@@ -1,1 +1,0 @@
-import{getMonthName as t}from"./formatting.js";import"dayjs";import"../constants/calendar.js";function r(r){var a=r.currentDate,n=t(a),o=a.year();return"".concat(n," ").concat(o)}export{r as getHeaderTitle};

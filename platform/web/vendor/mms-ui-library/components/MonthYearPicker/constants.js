@@ -1,1 +1,0 @@
-var M=4,Y="MMMM YYYY";export{M as CALENDAR_OFFSET,Y as MONTH_YEAR_FORMAT};

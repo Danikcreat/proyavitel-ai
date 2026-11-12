@@ -1,4 +1,0 @@
-export const MIN_COUNTRY_CALENDAR_HOURS = 0;
-export const MAX_COUNTRY_CALENDAR_HOURS = 248;
-
-export const CALENDAR_TAB_ID = 3;

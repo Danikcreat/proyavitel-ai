@@ -1,1 +1,0 @@
-export { usePieChartSize } from './usePieChartSize';

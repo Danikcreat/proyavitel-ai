@@ -1,1 +1,0 @@
-export const DISTANCE_FROM_BUTTON_TO_POPOVER = 4;

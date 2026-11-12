@@ -1,1 +1,0 @@
-export const DYNAMIC_CELL_VERTICAL_PADDINGS = 8;

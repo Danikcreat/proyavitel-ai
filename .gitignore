@@ -30,3 +30,17 @@ PhotoPrint/
 !**/.env.example
 **/appsettings.Development.json
 **/appsettings.IntegrationTest.json
+
+# Other local projects are retained on disk, not published here
+platform/
+ai-service/
+clients/
+deploy/
+docs/
+scripts/
+compose.yaml
+openapi.yaml
+README.proyavitel.md
+SOURCES.md
+CONTRIBUTING.md
+.github/workflows/ai-service.yml

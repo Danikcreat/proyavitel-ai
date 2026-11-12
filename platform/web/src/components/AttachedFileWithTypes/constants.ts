@@ -1,1 +1,0 @@
-export const ATTACHED_FILE_WRAPPER_MAX_WIDTH = 371;

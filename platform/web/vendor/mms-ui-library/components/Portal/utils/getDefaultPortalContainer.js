@@ -1,1 +1,0 @@
-var e="portal-container";var t=function(){return document.querySelector("[".concat(e,"]"))||((t=document.createElement("div")).setAttribute(e,""),document.body.appendChild(t),t);var t};export{e as PORTAL_CONTAINER_ATTRIBUTE,t as getDefaultPortalContainer};

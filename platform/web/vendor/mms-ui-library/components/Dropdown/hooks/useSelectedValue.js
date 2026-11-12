@@ -1,1 +1,0 @@
-import{useMemo as r}from"react";var n=function(n,t,o){return r((function(){var r;return o?null!==(r=n.find((function(r){return r[o]===t})))&&void 0!==r?r:n[0]:t}),[n,t,o])};export{n as useSelectedValue};

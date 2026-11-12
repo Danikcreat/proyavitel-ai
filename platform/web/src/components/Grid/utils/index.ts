@@ -1,1 +1,0 @@
-export { getGridColumnTemplateFromColumnWidths } from './getGridColumnTemplateFromHeader';

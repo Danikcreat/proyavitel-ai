@@ -1,1 +1,0 @@
-import e from"@emotion/styled";var i=e.div((function(e){return{display:"flex",flexDirection:"column",gap:e.theme.spaces.m,width:"100%"}})),t=e.div((function(e){return{display:"flex",flexDirection:"column",gap:e.theme.spaces.s}}));export{i as CompactColorPickerWrapper,t as PaletteWrapper};

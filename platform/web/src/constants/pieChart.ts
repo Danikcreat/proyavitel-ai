@@ -1,1 +1,0 @@
-export const PIE_CHART_WRAPPER_HEIGHT = 356;

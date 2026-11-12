@@ -1,1 +1,0 @@
-export const EXPENSES_TOTAL_ROW_HEIGHT = 21;
