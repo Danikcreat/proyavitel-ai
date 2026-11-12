@@ -1,0 +1,232 @@
+{
+  "version": "track2-2",
+  "currency": "BYN",
+  "templates": [
+    {
+      "id": "auto",
+      "title": "Генерация альбома",
+      "image": "8ca4c.png",
+      "theme": "Путешествия",
+      "minPhotos": 10,
+      "maxPhotos": 200,
+      "minPages": 20,
+      "maxPages": 60,
+      "extraPrice": 0,
+      "popularity": 100,
+      "newness": 40
+    },
+    {
+      "id": "summer",
+      "title": "Лето внутри",
+      "image": "689cc.png",
+      "theme": "Путешествия",
+      "minPhotos": 10,
+      "maxPhotos": 80,
+      "minPages": 20,
+      "maxPages": 60,
+      "extraPrice": 0,
+      "popularity": 90,
+      "newness": 100
+    },
+    {
+      "id": "love",
+      "title": "Про любовь",
+      "image": "fd8ef.png",
+      "theme": "Свадьба",
+      "minPhotos": 20,
+      "maxPhotos": 120,
+      "minPages": 20,
+      "maxPages": 60,
+      "extraPrice": 1000,
+      "popularity": 80,
+      "newness": 50
+    },
+    {
+      "id": "moments",
+      "title": "Лучшие моменты",
+      "image": "7fb69.png",
+      "theme": "Семья",
+      "minPhotos": 10,
+      "maxPhotos": 60,
+      "minPages": 20,
+      "maxPages": 60,
+      "extraPrice": 300,
+      "popularity": 70,
+      "newness": 80
+    },
+    {
+      "id": "year",
+      "title": "Этот год",
+      "image": "bd681.png",
+      "theme": "Семья",
+      "minPhotos": 30,
+      "maxPhotos": 200,
+      "minPages": 30,
+      "maxPages": 60,
+      "extraPrice": 1500,
+      "popularity": 60,
+      "newness": 90
+    },
+    {
+      "id": "quiet",
+      "title": "Тихие дни",
+      "image": "83f0b.png",
+      "theme": "Природа",
+      "minPhotos": 5,
+      "maxPhotos": 40,
+      "minPages": 20,
+      "maxPages": 40,
+      "extraPrice": -500,
+      "popularity": 50,
+      "newness": 70
+    }
+  ],
+  "products": [
+    {
+      "id": "book",
+      "title": "Фотокнига",
+      "leadTime": "5–8 рабочих дней",
+      "description": "Фотокнига в твёрдой обложке. Выберите тариф, формат и число страниц."
+    },
+    {
+      "id": "prints",
+      "title": "Фотопечать",
+      "leadTime": "3–5 рабочих дней",
+      "description": "Печать JPEG/PNG. Размер, бумага и рамка выбираются перед заказом."
+    }
+  ],
+  "pricing": {
+    "book": {
+      "tariffs": {
+        "Classic": 7290,
+        "Lite": 4990,
+        "Premium": 10990
+      },
+      "basePages": 20,
+      "extraSpread": 450,
+      "formats": {
+        "20 × 20 см": 0,
+        "15 × 15 см": -1000,
+        "20 × 30 см": 2000
+      }
+    },
+    "prints": {
+      "sizes": {
+        "10 × 15 см": 55,
+        "15 × 20 см": 135,
+        "20 × 30 см": 270
+      },
+      "papers": {
+        "Матовая": 0,
+        "Глянцевая": 10
+      },
+      "frames": {
+        "Без рамки": 0,
+        "Белая рамка": 15
+      },
+      "types": {
+        "Фотохимическая": 0,
+        "Цифровая": 0
+      }
+    },
+    "promos": {
+      "PIC15": 15
+    }
+  },
+  "deliveryMethods": [
+    {
+      "id": "pickup",
+      "title": "Тестовый пункт выдачи",
+      "fee": 500
+    },
+    {
+      "id": "courier",
+      "title": "Тестовая доставка курьером",
+      "fee": 900
+    },
+    {
+      "id": "studio",
+      "title": "Самовывоз из студии",
+      "fee": 0
+    }
+  ],
+  "points": [
+    {
+      "address": "пр-т Независимости, 58",
+      "hours": "Ежедневно 09:00–21:00",
+      "distance": "0,6"
+    },
+    {
+      "address": "ул. Якуба Коласа, 15",
+      "hours": "Пн–сб 10:00–20:00",
+      "distance": "1,2"
+    },
+    {
+      "address": "ул. Сурганова, 40",
+      "hours": "Ежедневно 10:00–21:00",
+      "distance": "1,8"
+    }
+  ],
+  "limits": {
+    "maxFileBytes": 12582912,
+    "maxFiles": 40,
+    "formats": [
+      "image/jpeg",
+      "image/png"
+    ],
+    "warningDpi": 150,
+    "recommendedDpi": 300
+  },
+  "gallery": [
+    {
+      "id": "demo-1",
+      "file": "63b7d.png",
+      "name": "Лето.png"
+    },
+    {
+      "id": "demo-2",
+      "file": "b5691.png",
+      "name": "Путешествие.png"
+    },
+    {
+      "id": "demo-3",
+      "file": "bbaf5.png",
+      "name": "Побережье.png"
+    },
+    {
+      "id": "demo-4",
+      "file": "e158f.png",
+      "name": "Моменты.png"
+    },
+    {
+      "id": "demo-5",
+      "file": "689cc.png",
+      "name": "Лето внутри.png"
+    },
+    {
+      "id": "demo-6",
+      "file": "fd8ef.png",
+      "name": "Про любовь.png"
+    },
+    {
+      "id": "demo-7",
+      "file": "7fb69.png",
+      "name": "Лучшие моменты.png"
+    },
+    {
+      "id": "demo-8",
+      "file": "bd681.png",
+      "name": "Этот год.png"
+    },
+    {
+      "id": "demo-9",
+      "file": "83f0b.png",
+      "name": "Тихие дни.png"
+    },
+    {
+      "id": "demo-10",
+      "file": "bcf16.png",
+      "name": "Наша книга.png"
+    }
+  ]
+}

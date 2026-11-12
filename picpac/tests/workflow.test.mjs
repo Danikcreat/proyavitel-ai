@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {preflight,reorder,createOperation,enqueue,mergeOrders} from '../src/workflow.mjs';
+test('10 photos retain deterministic order across serialisation and reorder',()=>{const ids=Array.from({length:10},(_,i)=>'photo-'+i);assert.deepEqual(JSON.parse(JSON.stringify(reorder(ids,0,9))),[...ids.slice(1),ids[0]]);assert.equal(ids[0],'photo-0');});
+test('preflight distinguishes empty, unsupported and low resolution',()=>{const project={kind:'book',photoIds:['a'],pages:20,draft:{}};const a={name:'tiny.png',type:'image/png',width:64,height:64};const r=preflight(project,{a});assert.equal(r.emptyAreas,9);assert.equal(r.warnings[0].code,'LOW_RESOLUTION');assert.equal(preflight({...project,draft:{autoFill:true}},{a}).emptyAreas,0);assert.equal(preflight(project,{a:{...a,type:'image/gif'}}).errors.at(-1).code,'FORMAT');});
+test('operation and order merge are idempotent',()=>{const op=createOperation({items:[]},'stable-key');assert.equal(enqueue(enqueue([],op),op).length,1);assert.equal(mergeOrders([{id:'stable-key',clientId:'stable-key',pending:true}],[{id:'6400001',clientId:'stable-key',status:'accepted'}]).length,1);});
+

@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+WORKDIR /srv
+RUN pip install --no-cache-dir uv==0.13.7
+COPY pyproject.toml uv.lock ./
+COPY app ./app
+RUN uv sync --frozen --no-dev
+COPY alembic.ini ./
+COPY migrations ./migrations
+RUN useradd --uid 10001 --create-home service
+USER service
+EXPOSE 8081
+CMD [".venv/bin/uvicorn", "app.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8081", "--no-access-log"]
+

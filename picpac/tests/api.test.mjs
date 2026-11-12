@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import http from 'node:http';
+import {createMockApi} from '../server/mock-api.mjs';
+test('mock API acceptance',async t=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'picpac-test-'));
+  const catalogFile=path.join(dir,'catalog.json');fs.copyFileSync(new URL('../public/mock/catalog.json',import.meta.url),catalogFile);
+  const api=createMockApi({catalogFile,dataDir:dir});const server=http.createServer((req,res)=>api(req,res,new URL(req.url,'http://localhost')));
+  await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
+  const call=async(url,method='GET',data,token,key)=>{const r=await fetch(base+url,{method,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(key?{'Idempotency-Key':key}:{})},body:data?JSON.stringify(data):undefined});return {status:r.status,data:await r.json()};};
+  const a=(await call('/api/auth/guest','POST',{clientId:'guest-aaaaaaaa'})).data;
+  const b=(await call('/api/auth/guest','POST',{clientId:'guest-bbbbbbbb'})).data;
+  const item={id:'book',kind:'book',title:'Тестовая книга',template:'summer',tariff:'Classic',format:'20 × 20 см',pages:20,quantity:1,photoIds:['file-1'],preflight:{reviewed:true,emptyAreas:0,lowResolution:true,acceptedLowResolution:true}};
+  const payload={clientId:'operation-00001',title:'Приёмка',items:[item],recipient:{name:'Тест',phone:'+375290000000'},deliveryId:'pickup',promoCode:'',expectedTotal:7790};let order;
+  await t.test('catalog is external and responds through API',async()=>{const r=await call('/api/catalog');assert.equal(r.status,200);assert.equal(r.data.pricing.book.tariffs.Classic,7290);assert.equal(r.data.gallery.length,10);});
+  await t.test('test login validates credentials',async()=>{assert.equal((await call('/api/auth/login','POST',{email:'demo@picpac.test',password:'wrong'})).status,401);assert.equal((await call('/api/auth/login','POST',{email:'demo@picpac.test',password:'PicPac2026!'})).status,200);});
+  await t.test('concurrent repeated POST returns one durable order',async()=>{const rs=await Promise.all([call('/api/orders','POST',payload,a.token,'operation-00001'),call('/api/orders','POST',payload,a.token,'operation-00001')]);assert.deepEqual(rs.map(r=>r.status).sort(),[200,201]);assert.equal(rs[0].data.order.id,rs[1].data.order.id);order=rs[0].data.order;assert.equal((await call('/api/orders','GET',null,a.token)).data.orders.length,1);assert.equal(JSON.parse(fs.readFileSync(path.join(dir,'state.json'))).orders.length,1);});
+  await t.test('same key cannot be reused for altered payload',async()=>{assert.equal((await call('/api/orders','POST',{...payload,title:'Другой заказ'},a.token,'operation-00001')).status,409);});
+  await t.test('server rejects unconfirmed quality, empty areas and stale price',async()=>{for(const p of [{...payload,items:[{...item,preflight:{...item.preflight,acceptedLowResolution:false}}]},{...payload,items:[{...item,preflight:{...item.preflight,emptyAreas:2}}]},{...payload,expectedTotal:1}])assert.ok((await call('/api/orders','POST',p,a.token,crypto.randomUUID())).status>=400);});
+  await t.test('ownership and linked support are enforced',async()=>{assert.equal((await call('/api/orders/'+order.id,'GET',null,b.token)).status,404);assert.equal((await call('/api/support','POST',{clientId:'msg-1',orderId:order.id,text:'Вопрос по заказу, который принадлежит другому гостю.'},b.token)).status,404);const msg={clientId:'msg-1',orderId:order.id,subject:'Доставка',text:'Прошу уточнить срок доставки тестового заказа.'};assert.equal((await call('/api/support','POST',msg,a.token)).status,201);assert.equal((await call('/api/support','POST',msg,a.token)).data.duplicate,true);assert.equal((await call('/api/orders/'+order.id,'GET',null,a.token)).data.order.messages.length,1);});
+  await t.test('status timeline traverses all stages, no money is charged',async()=>{for(const stage of ['moderation','production','ready','delivery','completed']){const r=await call('/api/orders/'+order.id+'/advance','POST',{},a.token);assert.equal(r.data.order.status,stage);}const r=await call('/api/orders/'+order.id,'GET',null,a.token);assert.equal(r.data.order.timeline.length,6);assert.equal(r.data.order.payment.charged,0);});
+  await t.test('template-specific price is calculated by API',async()=>{const r=await call('/api/orders','POST',{...payload,clientId:'quiet-price-1',items:[{...item,template:'quiet'}],expectedTotal:7290},a.token,'quiet-price-1');assert.equal(r.status,201);assert.equal(r.data.order.items[0].price,6790);});
+  await t.test('delete removes only current account and invalidates its session',async()=>{assert.equal((await call('/api/account','DELETE',null,a.token)).status,200);assert.equal((await call('/api/orders','GET',null,a.token)).status,401);assert.equal((await call('/api/orders','GET',null,b.token)).status,200);assert.equal(JSON.parse(fs.readFileSync(path.join(dir,'state.json'))).orders.length,0);});
+  await new Promise(r=>server.close(r));
+  assert.ok(path.resolve(dir).startsWith(path.resolve(os.tmpdir())+path.sep+'picpac-test-'));fs.rmSync(dir,{recursive:true});
+});
+
