@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const base='http://127.0.0.1:5174';
+const call=async(p,method='GET',data,token,key)=>{const r=await fetch(base+p,{method,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(key?{'Idempotency-Key':key}:{})},body:data?JSON.stringify(data):undefined});return {status:r.status,data:await r.json()};};
+const {data:s}=await call('/api/auth/guest','POST',{clientId:'crm-integration-check'});
+const photo='11111111-1111-4111-8111-111111111111';
+const bytes=fs.readFileSync('public/assets/689cc.png');
+const upload=await fetch(base+'/api/photos/'+photo,{method:'PUT',headers:{Authorization:'Bearer '+s.token,'Content-Type':'image/png'},body:bytes});assert.equal(upload.status,200);
+const item={kind:'book',title:'Проверка интеграции PicPac → CRM',template:'summer',tariff:'Classic',format:'20 × 20 см',pages:20,quantity:1,photoIds:[photo],draft:{autoFill:true,text:'Демонстрационный заказ',layout:'Классический'},preflight:{reviewed:true,emptyAreas:0,lowResolution:false}};
+const payload={clientId:'crm-e2e-operation',title:'Тест интеграции · без оплаты',items:[item],recipient:{name:'Демо-получатель',phone:'+375290000000'},deliveryId:'pickup',promoCode:'',expectedTotal:7790};
+const created=await call('/api/orders','POST',payload,s.token,'crm-e2e-operation');assert.ok([200,201].includes(created.status),JSON.stringify(created));
+const id=created.data.order.id;const again=await call('/api/orders','POST',payload,s.token,'crm-e2e-operation');assert.equal(again.data.order.id,id);
+const crm=await call('/api/crm/orders');const o=crm.data.orders.find(o=>o.id===id);assert.deepEqual(o.originalRequest,payload);assert.equal(crm.data.orders.filter(o=>o.id===id).length,1);
+const image=await fetch(base+'/api/crm/photos/'+s.user.id+'/'+photo);assert.deepEqual(Buffer.from(await image.arrayBuffer()),bytes);
+await call('/api/crm/orders/'+id+'/status','POST',{status:'moderation'});const customer=await call('/api/orders/'+id,'GET',null,s.token);assert.equal(customer.data.order.status,'moderation');
+console.log('PASS: order '+id+', full payload, original PNG, retry without duplicates, CRM status visible to customer.');
+const proxy=await fetch('http://127.0.0.1:3000/api/crm/orders');assert.equal(proxy.status,200);console.log('PASS: CRM frontend proxy.');

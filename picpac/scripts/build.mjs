@@ -5,6 +5,7 @@ import {syncBuiltinESMExports} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import ts from 'typescript';
 process.chdir(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'));
+await import('./check-assets.mjs');
 // Vite's optional Windows network-drive probe must not block a local build
 // when the host prevents spawning cmd.exe.
 const originalExec=childProcess.exec;

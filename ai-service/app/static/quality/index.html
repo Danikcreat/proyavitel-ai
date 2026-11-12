@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Фотопринт · Контроль качества</title>
+  <link rel="stylesheet" href="quality.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="identity">
+        <span class="logo">✳</span>
+        <div>
+          <small>PHOTOPRINT / ДИРЕКТОР</small>
+          <h1>Контроль качества</h1>
+          <p>Главная страница руководителя для контроля этапов производства и качества</p>
+        </div>
+      </div>
+
+      <div class="account">
+        <span class="live">● Демо-режим</span>
+        <span class="avatar">Д</span>
+      </div>
+    </header>
+
+    <section class="summary">
+      <article class="health">
+        <div class="ring">⌁</div>
+        <div>
+          <small>Состояние производства</small>
+          <strong>Требует внимания</strong>
+          <p>Есть отклонения качества на двух этапах</p>
+        </div>
+      </article>
+      <article>
+        <div class="number">18</div>
+        <div>
+          <small>Заказов в работе</small>
+          <strong>12 по плану</strong>
+          <p>6 заказов требуют контроля</p>
+        </div>
+      </article>
+      <article>
+        <div class="number">89%</div>
+        <div>
+          <small>Проверок пройдено</small>
+          <strong>Эффективность смены</strong>
+          <p>Средний показатель по участкам</p>
+        </div>
+      </article>
+      <article>
+        <div class="number danger">3</div>
+        <div>
+          <small>Открытые отклонения</small>
+          <strong>1 критическое</strong>
+          <p>Нужно решение руководителя</p>
+        </div>
+      </article>
+      <article>
+        <div class="number">04</div>
+        <div>
+          <small>Предстоящие отгрузки</small>
+          <strong>Ближайшие 48 часов</strong>
+          <p>1 заказ под риском переноса</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="production" class="production">
+      <div class="section-head">
+        <div>
+          <h2>Карта производственного процесса</h2>
+          <p>Карточки этапов соединены в единую цепочку: они показывают этап, станок, статус и ответственного</p>
+        </div>
+        <div class="filters">
+          <label>Заказ
+            <select id="order-filter">
+              <option value="all">Все заказы</option>
+              <option value="FP-1042">FP-1042</option>
+              <option value="FP-1048">FP-1048</option>
+              <option value="FP-1051">FP-1051</option>
+            </select>
+          </label>
+          <label>Состояние
+            <select id="status-filter">
+              <option value="all">Все этапы</option>
+              <option value="issue">С отклонениями</option>
+              <option value="progress">В работе</option>
+              <option value="done">Пройдены</option>
+              <option value="waiting">Ожидают</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="process-scroll">
+        <div class="timeline" id="timeline"></div>
+        <div class="stage-grid" id="stages"></div>
+      </div>
+    </section>
+
+    <div class="bottom">
+      <section class="panel" id="people">
+        <div class="panel-head">
+          <h2>Ответственные за участки</h2>
+          <small>Эффективность и загрузка</small>
+        </div>
+        <div id="people-list"></div>
+      </section>
+
+      <section class="panel" id="issues">
+        <div class="panel-head">
+          <h2>Отклонения и блокеры</h2>
+          <small>Требуют внимания</small>
+        </div>
+        <div id="issue-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Заказы под контролем</h2>
+          <small>Ближайшие действия</small>
+        </div>
+        <div id="order-list"></div>
+      </section>
+    </div>
+
+    <footer>Демонстрационный интерфейс · Все заказы, сотрудники, показатели и отклонения вымышлены · Реальные данные производства не подключены</footer>
+  </div>
+
+  <div class="overlay" id="overlay" hidden>
+    <button class="shade" id="dismiss" aria-label="Закрыть панель"></button>
+    <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer-top">
+        <span class="eyebrow">ПОДРОБНОСТИ ЭТАПА</span>
+        <button id="close" class="icon-btn" aria-label="Закрыть">✕</button>
+      </div>
+      <h2 id="drawer-title"></h2>
+      <div id="drawer-body"></div>
+    </aside>
+  </div>
+
+  <div class="toast" role="status" id="toast" hidden></div>
+  <script src="quality.js"></script>
+</body>
+</html>

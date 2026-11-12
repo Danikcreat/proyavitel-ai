@@ -1,0 +1,24 @@
+name: PicPac
+on:
+  push:
+    paths: ['picpac/**', '.github/workflows/picpac.yml']
+  pull_request:
+    paths: ['picpac/**', '.github/workflows/picpac.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: picpac
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: picpac/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run build

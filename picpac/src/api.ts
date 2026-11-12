@@ -1,3 +1,4 @@
+import {readPhotos} from './photos';
 import {SESSION_KEY,QUEUE_KEY,createOperation,enqueue} from './workflow.mjs';
 export class ApiError extends Error{status:number;code:string;constructor(message:string,status:number,code:string){super(message);this.status=status;this.code=code;}}
 export function getSession(){try{return JSON.parse(localStorage.getItem(SESSION_KEY)||'null');}catch{return null;}}
@@ -12,7 +13,18 @@ export function saveQueue(queue:any[]){localStorage.setItem(QUEUE_KEY,JSON.strin
 export function queueOrder(payload:any){const op=createOperation(payload);saveQueue(enqueue(readQueue(),op));return op;}
 let inFlight:Promise<any>|null=null;
 export function flushOrders(onOrder:(o:any)=>void){if(inFlight)return inFlight;inFlight=(async()=>{if(!navigator.onLine)return;for(const op of readQueue()){
-  try{await ensureSession();const {order}=await request('/api/orders',{method:'POST',headers:{'Idempotency-Key':op.key},body:JSON.stringify(op.payload)});onOrder(order);saveQueue(readQueue().filter(x=>x.key!==op.key));}
-  catch(e){const error=e as any;saveQueue(readQueue().map(x=>x.key===op.key?{...x,error:error instanceof ApiError?error.message:'Нет связи. Заказ сохранён, повторим с тем же ключом.'}:x));break;}
+  try{const session=await ensureSession();
+    const capability=await fetch('/api/local-capabilities').then(r=>r.ok?r.json():{crm:false}).catch(()=>({crm:false}));
+    if(capability.crm){
+      const ids=[...new Set<string>((op.payload.items||[]).flatMap((item:any)=>item.photoIds||[]))];
+      const rows=await readPhotos(ids);
+      for(let i=0;i<ids.length;i++){
+        if(!rows[i]?.blob)throw Error('Исходная фотография отсутствует. Замените её перед отправкой.');
+        const response=await fetch('/api/photos/'+ids[i],{method:'PUT',headers:{Authorization:'Bearer '+session.token,'Content-Type':rows[i].type},body:rows[i].blob,signal:AbortSignal.timeout(60000)});
+        if(!response.ok)throw Error('Не удалось передать фотографию в локальную CRM.');
+      }
+    }
+    const {order}=await request('/api/orders',{method:'POST',headers:{'Idempotency-Key':op.key},body:JSON.stringify(op.payload)});onOrder(order);saveQueue(readQueue().filter(x=>x.key!==op.key));}
+  catch(e){const error=e as any;saveQueue(readQueue().map(x=>x.key===op.key?{...x,error:error instanceof Error?error.message:'Нет связи. Заказ сохранён, повторим с тем же ключом.'}:x));break;}
 }})().finally(()=>{inFlight=null;});return inFlight;}
 

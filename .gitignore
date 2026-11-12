@@ -16,3 +16,17 @@ node_modules/
 .picpac-data/
 test-results/
 
+
+# Three-track workspace: local copies and generated files
+PhotoPrint/
+**/node_modules
+**/dist/
+**/build/
+**/bin/
+**/obj/
+**/coverage/
+**/.env
+**/.env.*
+!**/.env.example
+**/appsettings.Development.json
+**/appsettings.IntegrationTest.json

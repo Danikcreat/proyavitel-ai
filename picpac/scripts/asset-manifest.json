@@ -1,0 +1,447 @@
+[
+  {
+    "path": "public/assets/050b8.svg",
+    "size": 419,
+    "sha": "a0028c6a52881d2c110b7252467812bdfc6bd620"
+  },
+  {
+    "path": "public/assets/0973d.svg",
+    "size": 516,
+    "sha": "4b2e6d7669b418f8bf5aefb5934806d9a7ad0983"
+  },
+  {
+    "path": "public/assets/0afdc.svg",
+    "size": 445,
+    "sha": "e2118e3786e4e0ee6e36c683df692f18dd7a7226"
+  },
+  {
+    "path": "public/assets/0d13e.svg",
+    "size": 345,
+    "sha": "46f2d97522ebcc9e57198796dd812f2e03fb0a45"
+  },
+  {
+    "path": "public/assets/11025.svg",
+    "size": 372,
+    "sha": "660144c21e1e93b21627a2babd5f5dba81f84c2a"
+  },
+  {
+    "path": "public/assets/12886.svg",
+    "size": 345,
+    "sha": "d1e80c929e48365dd5b24675270596bbe747045b"
+  },
+  {
+    "path": "public/assets/1308e.png",
+    "size": 15260,
+    "sha": "e92b4642f1f6b92020adf2b4630c67d0c2216e0b"
+  },
+  {
+    "path": "public/assets/147c1.svg",
+    "size": 434,
+    "sha": "c37e945c288bb619516c1f5ae023254309ef2d68"
+  },
+  {
+    "path": "public/assets/1a55b.png",
+    "size": 553855,
+    "sha": "ba0c906402b6b8a7db4ac12abdc231dd85ab6679"
+  },
+  {
+    "path": "public/assets/1dd1f.svg",
+    "size": 371,
+    "sha": "0c52e75630094e684e0485dee516ad2446205b58"
+  },
+  {
+    "path": "public/assets/259a9.svg",
+    "size": 405,
+    "sha": "f1139dce635912f6861be5b004e22a0e536be1ac"
+  },
+  {
+    "path": "public/assets/285a6.svg",
+    "size": 427,
+    "sha": "e80b0773f628c31c2f92564d8b9ff1d3649e5709"
+  },
+  {
+    "path": "public/assets/2e7db.png",
+    "size": 2107604,
+    "sha": "47a5211580116a2aa0888e89bdefc7cdc096b446"
+  },
+  {
+    "path": "public/assets/2f11e.svg",
+    "size": 421,
+    "sha": "76cb67ad5cb5a8de1899e610dfb165b19c3ce37f"
+  },
+  {
+    "path": "public/assets/30f75.svg",
+    "size": 633,
+    "sha": "2936da7c09a548d0519a202bbe238327be94d6f4"
+  },
+  {
+    "path": "public/assets/333f9.svg",
+    "size": 370,
+    "sha": "e90a0145464fedfcc31765860ad4b78c1aa31559"
+  },
+  {
+    "path": "public/assets/3352c.svg",
+    "size": 412,
+    "sha": "653c3333b9423b4063b6e99bcdfafd10ae198f71"
+  },
+  {
+    "path": "public/assets/34dcd.svg",
+    "size": 455,
+    "sha": "b929490f45a60f7312a99acb8dd65eb5bec01d20"
+  },
+  {
+    "path": "public/assets/3842b.svg",
+    "size": 412,
+    "sha": "653c3333b9423b4063b6e99bcdfafd10ae198f71"
+  },
+  {
+    "path": "public/assets/3a552.svg",
+    "size": 371,
+    "sha": "dcc1d4158bcf0fbe8a6e88fe5c523803142c01d1"
+  },
+  {
+    "path": "public/assets/3ebe6.svg",
+    "size": 700,
+    "sha": "764e54c4ebc69f9142588bef600b0b5731bf1218"
+  },
+  {
+    "path": "public/assets/3f78b.png",
+    "size": 200021,
+    "sha": "7032fc268f0ca672758049df2bcfd3943b7a24d5"
+  },
+  {
+    "path": "public/assets/40788.svg",
+    "size": 480,
+    "sha": "88b543dbaf9920fc2f9bd4c68486265e03f2a30d"
+  },
+  {
+    "path": "public/assets/43900.svg",
+    "size": 401,
+    "sha": "b62254ed78ee7c29f949ec05add443105e3d7c72"
+  },
+  {
+    "path": "public/assets/48e58.svg",
+    "size": 700,
+    "sha": "764e54c4ebc69f9142588bef600b0b5731bf1218"
+  },
+  {
+    "path": "public/assets/4a6e5.svg",
+    "size": 3304,
+    "sha": "e315ea3e465c0144f2cd46bf9f3232f10e1fced0"
+  },
+  {
+    "path": "public/assets/50080.svg",
+    "size": 502,
+    "sha": "a1789872989c20503624c182a1c0ca9c471820ea"
+  },
+  {
+    "path": "public/assets/5283f.svg",
+    "size": 472,
+    "sha": "7ba09eda70ba3e7809e1813921d4976e895f3121"
+  },
+  {
+    "path": "public/assets/53403.svg",
+    "size": 416,
+    "sha": "451310816cdafe0707fc852c4f76752c3b73d5dc"
+  },
+  {
+    "path": "public/assets/538bc.svg",
+    "size": 461,
+    "sha": "549ef2ce077df9c7a414944f19b8c411e08aece3"
+  },
+  {
+    "path": "public/assets/54f7b.svg",
+    "size": 1006,
+    "sha": "0b65ee808ca809a5eaecfb9a6e0478a5846020cb"
+  },
+  {
+    "path": "public/assets/5a0eb.svg",
+    "size": 706,
+    "sha": "c95c0b9f62a217b52563a1caeae2728dac7d4f08"
+  },
+  {
+    "path": "public/assets/63b7d.png",
+    "size": 2163415,
+    "sha": "f7a1dd8791f90bd61539f53d7a54e2a58c275b36"
+  },
+  {
+    "path": "public/assets/6532e.png",
+    "size": 2272019,
+    "sha": "9a3891f7ed8f2e95e229824fc2905917b96995f3"
+  },
+  {
+    "path": "public/assets/66795.svg",
+    "size": 493,
+    "sha": "f8f0d45864e5039369d484b57122961902c0d4ad"
+  },
+  {
+    "path": "public/assets/67afa.svg",
+    "size": 416,
+    "sha": "17eb79ee52337602533f0c30ac54168505748e11"
+  },
+  {
+    "path": "public/assets/67f46.svg",
+    "size": 428,
+    "sha": "12da7fdaf59806eb3cb5d076fbf3560a08523342"
+  },
+  {
+    "path": "public/assets/689cc.png",
+    "size": 1329935,
+    "sha": "8d168d5f5c67ef153be349c23eeae8843ee80b1c"
+  },
+  {
+    "path": "public/assets/73f82.svg",
+    "size": 370,
+    "sha": "d72a868bfb3d7d359c504d437f32ebe87fa11769"
+  },
+  {
+    "path": "public/assets/784ca.svg",
+    "size": 449,
+    "sha": "c263f6c3aa4fe452f0daa1f5b54ac9a9a8b0c48c"
+  },
+  {
+    "path": "public/assets/7fb69.png",
+    "size": 213121,
+    "sha": "34e29550db09e6f6d9f056a74b5cc3d32c1723c6"
+  },
+  {
+    "path": "public/assets/80af3.svg",
+    "size": 439,
+    "sha": "e9a2fb26c60afc96240fd9517ca5c27388df22d1"
+  },
+  {
+    "path": "public/assets/83f0b.png",
+    "size": 214299,
+    "sha": "14b634b0d75b0cb020534ccc77e4501a54eb03b8"
+  },
+  {
+    "path": "public/assets/8799d.svg",
+    "size": 416,
+    "sha": "0fa39589441a490d1b769f4cb593a6c5e9518aa8"
+  },
+  {
+    "path": "public/assets/8a02c.svg",
+    "size": 484,
+    "sha": "5fed18c4a984ef05b9bd746b4d0926f01947233b"
+  },
+  {
+    "path": "public/assets/8ca4c.png",
+    "size": 1194938,
+    "sha": "99632a62d0774550999b1da23d19618572db9084"
+  },
+  {
+    "path": "public/assets/8f450.svg",
+    "size": 513,
+    "sha": "e624b43a215340921f426f0710c12bc9413415dd"
+  },
+  {
+    "path": "public/assets/96848.png",
+    "size": 464231,
+    "sha": "f1318584e8151fa42b5950c1cf28f7df7b0b340a"
+  },
+  {
+    "path": "public/assets/99cb8.svg",
+    "size": 370,
+    "sha": "d72a868bfb3d7d359c504d437f32ebe87fa11769"
+  },
+  {
+    "path": "public/assets/9ab9c.svg",
+    "size": 451,
+    "sha": "de86cf5502c7e9bc5ce50200065a6018817dc8c4"
+  },
+  {
+    "path": "public/assets/9b7c2.svg",
+    "size": 538,
+    "sha": "2fb864f8bfcc05be0f7dc019c9c2bf98549ca3ea"
+  },
+  {
+    "path": "public/assets/9d936.svg",
+    "size": 372,
+    "sha": "1cdf18f9a5a8cf71f30dc4a502262b06bf57408b"
+  },
+  {
+    "path": "public/assets/a0f90.svg",
+    "size": 424,
+    "sha": "842480354ceb5e641e0c3b45ea7419864f93a8b0"
+  },
+  {
+    "path": "public/assets/a1aec.svg",
+    "size": 896,
+    "sha": "0484cd420a0211a544ff20e5d71095580b8c627f"
+  },
+  {
+    "path": "public/assets/a3091.svg",
+    "size": 440,
+    "sha": "782a9320daf82079333db1a960478f831dbba61e"
+  },
+  {
+    "path": "public/assets/a39a7.svg",
+    "size": 329,
+    "sha": "279d9697f2934313170648f1ab39777ed08fdb80"
+  },
+  {
+    "path": "public/assets/a6e78.svg",
+    "size": 405,
+    "sha": "00712337c356ba51df83c86464232a3bccfd71af"
+  },
+  {
+    "path": "public/assets/a8329.svg",
+    "size": 449,
+    "sha": "4f0d84de89520f319f71b091224eb75b8d39c1c4"
+  },
+  {
+    "path": "public/assets/ab29f.svg",
+    "size": 499,
+    "sha": "2d0b63ca37f21d89086d95869c547c4c89297e7f"
+  },
+  {
+    "path": "public/assets/b3db4.svg",
+    "size": 593,
+    "sha": "46b8dd1e4f36967c9239e8b1c5b5e6480d480f65"
+  },
+  {
+    "path": "public/assets/b42a0.svg",
+    "size": 345,
+    "sha": "b52267aa1cf87509e4fb52f118c03ae13ef5bb6f"
+  },
+  {
+    "path": "public/assets/b4cfe.svg",
+    "size": 371,
+    "sha": "c3b59b4a3bfa907852b1939757b5b1f046e46d33"
+  },
+  {
+    "path": "public/assets/b5691.png",
+    "size": 1634748,
+    "sha": "265ce6e423771a44c299407e4db8106660fb1168"
+  },
+  {
+    "path": "public/assets/b7ce9.svg",
+    "size": 2688,
+    "sha": "05b48a700b01db0c8b2c67c34cff92da553e3086"
+  },
+  {
+    "path": "public/assets/bbaf5.png",
+    "size": 1198107,
+    "sha": "06d09c7ebd99e3f6a2829293226f73f5d658daac"
+  },
+  {
+    "path": "public/assets/bcf16.png",
+    "size": 1056074,
+    "sha": "2b0a35b4ef12ce7e71702a82bd3d5cda18038601"
+  },
+  {
+    "path": "public/assets/bd681.png",
+    "size": 210681,
+    "sha": "dff0003c14b8514ad0af53cdcdd8d87382936d7d"
+  },
+  {
+    "path": "public/assets/c22e3.svg",
+    "size": 371,
+    "sha": "e7cce560ae233926b6f583dff929c6b81b4d16e2"
+  },
+  {
+    "path": "public/assets/c2440.svg",
+    "size": 637,
+    "sha": "545c0fa9423e0fbd99c481420872d1a7aa5fab2c"
+  },
+  {
+    "path": "public/assets/c26d6.svg",
+    "size": 623,
+    "sha": "b4053101307ab928558ace1bfc2ae416ef417080"
+  },
+  {
+    "path": "public/assets/c6ae3.svg",
+    "size": 371,
+    "sha": "c1adc09badd06115118c14a8e98b234e182e4db3"
+  },
+  {
+    "path": "public/assets/c6b21.svg",
+    "size": 445,
+    "sha": "dca73fd5b6a8d7ac20c8f2d15d7649d71f2e1db0"
+  },
+  {
+    "path": "public/assets/c9324.svg",
+    "size": 427,
+    "sha": "26abf0dac9db208f63db95a8bb9863125b166ffb"
+  },
+  {
+    "path": "public/assets/d1f57.svg",
+    "size": 1513,
+    "sha": "b53b8bee7b0974a97110c819277d67d533c9cb3e"
+  },
+  {
+    "path": "public/assets/d59b8.svg",
+    "size": 397,
+    "sha": "c84228f45aa43f4f160d1f7ffa1e7cb1a8d911e1"
+  },
+  {
+    "path": "public/assets/e140b.svg",
+    "size": 500,
+    "sha": "633b2cdfb045fe35b2b39e211143b1b6469de8ce"
+  },
+  {
+    "path": "public/assets/e158f.png",
+    "size": 948653,
+    "sha": "7c308d9c064f0ee468526ba0c100fd64b4130dcc"
+  },
+  {
+    "path": "public/assets/e4138.svg",
+    "size": 468,
+    "sha": "c3d0a1f3017f98b996fcdc6b8894a23c263c92bf"
+  },
+  {
+    "path": "public/assets/e89c5.svg",
+    "size": 453,
+    "sha": "1471f237663ff9966c79eac9b2dcb4415dacbb14"
+  },
+  {
+    "path": "public/assets/eb490.svg",
+    "size": 407,
+    "sha": "96b1f351107548e6b01a8dfa0300dc9bdcc4955f"
+  },
+  {
+    "path": "public/assets/ef26e.svg",
+    "size": 349,
+    "sha": "d78ad665c80d9a3460799a4f28af11263ba00fd2"
+  },
+  {
+    "path": "public/assets/f8e89.svg",
+    "size": 419,
+    "sha": "f8752137b5928073091e0139c9fb347a5e8ed627"
+  },
+  {
+    "path": "public/assets/fd8ef.png",
+    "size": 200706,
+    "sha": "0519cdbb3a4de0750119c81360dbe1d405a7dc76"
+  },
+  {
+    "path": "public/assets/futura-bold.ttf",
+    "size": 67832,
+    "sha": "c09df9ad34592a9d74f19db7e1cf8f3773c9fd98"
+  },
+  {
+    "path": "public/assets/futura-book.ttf",
+    "size": 64136,
+    "sha": "50e634b8a5a436fd6a7c82cece8d5889a3baa868"
+  },
+  {
+    "path": "public/assets/futura-medium.ttf",
+    "size": 66700,
+    "sha": "8c14500d98526530f8d69b6aed6bfb194a0b371f"
+  },
+  {
+    "path": "public/icon.svg",
+    "size": 272,
+    "sha": "3de73e0caf083cd61b342d8710498432a600478d"
+  },
+  {
+    "path": "public/manifest.webmanifest",
+    "size": 277,
+    "sha": "cf0645d3e4a640481b213aeed4ee58049ec0c0cf"
+  },
+  {
+    "path": "public/mock/catalog.json",
+    "size": 5177,
+    "sha": "add9d84f132ea900b4060308fbf0750d6ab47f15"
+  }
+]
