@@ -1,3 +1,5 @@
+[GitHub проекта](https://github.com/Danikcreat/proyavitel-ai) · [Ридми проекта — PDF](output/pdf/Ридми%20проекта.pdf)
+
 <div align="center">
 
 ![Фотопринт Контур — три трека, один процесс](docs/assets/project-banner.svg)
